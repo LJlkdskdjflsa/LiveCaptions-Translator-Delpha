@@ -211,3 +211,4 @@ After configuration, close Windows LiveCaptions and launch LiveCaptions Translat
 ### Star History
 
 [![Stargazers over time](https://starchart.cc/SakiRinn/LiveCaptions-Translator.svg?variant=adaptive)](https://starchart.cc/SakiRinn/LiveCaptions-Translator)
+# LiveCaptions-Translator-Delpha
