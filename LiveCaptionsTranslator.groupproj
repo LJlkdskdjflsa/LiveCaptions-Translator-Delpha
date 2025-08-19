@@ -1,0 +1,41 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="LiveCaptionsTranslator.dproj">
+            <Dependencies />
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Default</Borland.ProjectType>
+        <BorlandProject>
+            <Default.Personality>
+                <Projects>
+                    <Projects Name="LiveCaptionsTranslator.exe">LiveCaptionsTranslator.dproj</Projects>
+                    <Projects Name="Targets">LiveCaptionsTranslator.exe</Projects>
+                </Projects>
+            </Default.Personality>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="LiveCaptionsTranslator">
+        <MSBuild Projects="LiveCaptionsTranslator.dproj" />
+    </Target>
+    <Target Name="LiveCaptionsTranslator:Clean">
+        <MSBuild Projects="LiveCaptionsTranslator.dproj" Targets="Clean" />
+    </Target>
+    <Target Name="LiveCaptionsTranslator:Make">
+        <MSBuild Projects="LiveCaptionsTranslator.dproj" Targets="Make" />
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="LiveCaptionsTranslator" />
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="LiveCaptionsTranslator:Clean" />
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="LiveCaptionsTranslator:Make" />
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" />
+</Project>
